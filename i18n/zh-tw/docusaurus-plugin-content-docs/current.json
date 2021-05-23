@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "下一頁",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Strategy Tutorial": {
+    "message": "策略開發教學",
+    "description": "The label for category Strategy Tutorial in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Backtest": {
+    "message": "回測",
+    "description": "The label for category Backtest in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Simulation": {
+    "message": "模擬",
+    "description": "The label for category Simulation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Live Trade": {
+    "message": "即時交易",
+    "description": "The label for category Live Trade in sidebar tutorialSidebar"
+  }
+}

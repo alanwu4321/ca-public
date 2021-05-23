@@ -2,39 +2,29 @@
 sidebar_position: 1
 ---
 
-# Intro
+# Get Started
 
-export const Highlight = ({ children, color }) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: "2px",
-      color: "#fff",
-      padding: "0.2rem",
-    }}
-  >
-    {children}
-  </span>
-);
-
+import { Highlight } from "../../../../src/components/Highlight.js";
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+
+### 教學
 
 <Tabs
   defaultValue="developer"
   values={[
-    { label: "Strategy Developer 👩‍💻", value: "developer" },
-    { label: "Trader 💵", value: "trader" },
+    { label: "策略開發 👩‍💻", value: "developer" },
+    { label: "投資 💵", value: "trader" },
   ]}
 >
   <TabItem value="developer">
 
-[Python 策略開發](/public/docs/strategy/python) <Highlight color="#25c2a0"> Stable </Highlight>
+[Python 策略開發](/docs/strategy/python) <Highlight color="#25c2a0"> Stable </Highlight>
 
-[JavaScript 策略開發](/public/docs/strategy/javascript) <Highlight color="#ffba00"> In Progress </Highlight>
+[JavaScript 策略開發](/docs/strategy/javascript) <Highlight color="#ffba00"> In Progress </Highlight>
 
-:::info
-請先以 Python 文件為主
+:::note
+請先以 <Highlight color="#25c2a0">Stable</Highlight> 文件為主
 :::
 
   </TabItem>
@@ -46,3 +36,7 @@ We are working hard on this 👷
 
   </TabItem>
 </Tabs>
+
+### 流程
+
+![](https://crypto-arsenal.io/static/howtostart-zh-TW.svg)

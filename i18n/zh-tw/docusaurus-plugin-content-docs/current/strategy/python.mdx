@@ -2,7 +2,11 @@
 sidebar_position: 1
 ---
 
+import { Highlight } from "../../../../../src/components/Highlight.js";
+
 # Python 策略開發
+
+<Highlight color="#25c2a0"> Stable </Highlight>
 
 ## 基本結構
 
@@ -27,7 +31,7 @@ class Strategy():
 
     def __init__(self):
         # strategy property needed
-        self.subscribedBooks = {
+        self.subscribed_books = {
             'Bitfinex': {
                 'pairs': ['ETH-USDT'],
             },
@@ -481,7 +485,7 @@ class Strategy():
 
     def __init__(self):
         # strategy property
-        self.subscribedBooks = {
+        self.subscribed_books = {
             'Bitfinex': {
                 'pairs': ['ETH-USDT'],
             },

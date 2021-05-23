@@ -24,7 +24,7 @@ module.exports = {
           position: 'left',
           label: 'Docs',
         },
-        { to: '/public/blog', label: 'Blog', position: 'left' },
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
           type: 'localeDropdown',
           position: 'right',
@@ -44,7 +44,7 @@ module.exports = {
           items: [
             {
               label: 'Tutorial',
-              to: '/public/docs/intro',
+              to: '/docs/intro',
             },
           ],
         },
@@ -70,7 +70,7 @@ module.exports = {
           items: [
             {
               label: 'Blog',
-              to: '/public/blog',
+              to: '/blog',
             },
             {
               label: 'GitHub',
@@ -84,7 +84,7 @@ module.exports = {
   },
   i18n: {
     defaultLocale: 'zh-tw',
-    locales: ['zh-tw'],
+    locales: ['zh-tw', 'en'],
   },
   presets: [
     [
