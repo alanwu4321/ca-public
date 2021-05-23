@@ -77,7 +77,7 @@ class Strategy():
 
 ```
 
-- `information` above, returns the basic trading structure, `__init__` returns all necessary parameters, for more details please refer to [Nodejs](WritingStrategy.md).
+- `information` above, returns the basic trading structure, `__init__` returns all necessary parameters, for more details please refer to [Nodejs](/public/docs/strategy/javascript)
 
 ### Advanced
 

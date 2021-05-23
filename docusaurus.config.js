@@ -1,14 +1,14 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Crypto Arsenal Docs',
-  tagline: 'Trade by Pros and for Pros!',
+  title: 'Crypto Arsenal',
+  tagline: 'Documentation & Blog',
   url: 'https://crypto-arsenal.github.io',
-  baseUrl: '/docs/',
+  baseUrl: '/public/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Crypto-Arsenal', // Usually your GitHub org/user name.
-  projectName: 'docs', // Usually your repo name.
+  projectName: 'public', // Usually your repo name.
   themeConfig: {
     navbar: {
       // style: 'dark',
@@ -24,13 +24,13 @@ module.exports = {
           position: 'left',
           label: 'Tutorial',
         },
-        { to: '/blog', label: 'Blog', position: 'left' },
+        { to: '/public/blog', label: 'Blog', position: 'left' },
         {
           type: 'localeDropdown',
           position: 'right',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/Crypto-Arsenal',
           label: 'GitHub',
           position: 'right',
         },
@@ -44,7 +44,7 @@ module.exports = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/intro',
+              to: '/public/docs/intro',
             },
           ],
         },
@@ -70,7 +70,7 @@ module.exports = {
           items: [
             {
               label: 'Blog',
-              to: '/blog',
+              to: '/public/blog',
             },
             {
               label: 'GitHub',
@@ -94,13 +94,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/Crypto-Arsenal/public/edit/master/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+            'https://github.com/Crypto-Arsenal/public/edit/master/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
