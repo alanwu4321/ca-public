@@ -13,7 +13,7 @@ const FeatureList = [
     img: first,
     description: (
       <>
-        You focus on the trading logic, we do the rest with IDE, backtesting database, API connection to exchanges, and proprietary 'Strategy Bot Engine'.
+        You focus on the trading logic, we do the rest with IDE, backtesting database, API connection to exchanges, and proprietary Strategy Bot Engine
       </>
     ),
   },
@@ -22,7 +22,7 @@ const FeatureList = [
     img: second,
     description: (
       <>
-        TA-Lib for <code>JavaScript</code> and <code>Python</code>. The best of all, the machine learning models.
+        TA-Lib for <code>JavaScript</code> and <code>Python</code>. The best of all, the machine learning models can help you cope with volatility
       </>
     ),
   },

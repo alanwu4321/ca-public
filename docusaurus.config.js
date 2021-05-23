@@ -22,7 +22,7 @@ module.exports = {
           type: 'doc',
           docId: 'intro',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Docs',
         },
         { to: '/public/blog', label: 'Blog', position: 'left' },
         {
@@ -51,10 +51,10 @@ module.exports = {
         {
           title: 'Community',
           items: [
-            // {
-            //   label: 'Stack Overflow',
-            //   href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            // },
+            {
+              label: 'Discussion',
+              href: 'https://github.com/Crypto-Arsenal/public/discussions',
+            }
             // {
             //   label: 'Discord',
             //   href: 'https://discordapp.com/invite/docusaurus',
@@ -84,7 +84,7 @@ module.exports = {
   },
   i18n: {
     defaultLocale: 'zh-tw',
-    locales: ['en', 'zh-tw'],
+    locales: ['zh-tw'],
   },
   presets: [
     [
