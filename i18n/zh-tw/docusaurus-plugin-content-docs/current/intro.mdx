@@ -1,0 +1,48 @@
+---
+sidebar_position: 1
+---
+
+# Intro
+
+export const Highlight = ({ children, color }) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: "2px",
+      color: "#fff",
+      padding: "0.2rem",
+    }}
+  >
+    {children}
+  </span>
+);
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+<Tabs
+  defaultValue="developer"
+  values={[
+    { label: "Strategy Developer 👩‍💻", value: "developer" },
+    { label: "Trader 💵", value: "trader" },
+  ]}
+>
+  <TabItem value="developer">
+
+[Python 策略開發](/docs/strategy/python) <Highlight color="#25c2a0"> Stable </Highlight>
+
+[JavaScript 策略開發](/docs/strategy/javascript) <Highlight color="#ffba00"> In Progress </Highlight>
+
+:::info
+請先以 Python 文件為主
+:::
+
+  </TabItem>
+  <TabItem value="trader">
+
+:::note
+We are working hard on this 👷
+:::
+
+  </TabItem>
+</Tabs>
