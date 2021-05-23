@@ -2,13 +2,13 @@
 module.exports = {
   title: 'Crypto Arsenal Docs',
   tagline: 'Trade by Pros and for Pros!',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://crypto-arsenal.github.io',
+  baseUrl: '/docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'crypto-arsenal', // Usually your GitHub org/user name.
-  projectName: 'ca-docs', // Usually your repo name.
+  organizationName: 'Crypto-Arsenal', // Usually your GitHub org/user name.
+  projectName: 'docs', // Usually your repo name.
   themeConfig: {
     navbar: {
       // style: 'dark',
