@@ -10,6 +10,17 @@ module.exports = {
   organizationName: 'Crypto-Arsenal', // Usually your GitHub org/user name.
   projectName: 'public', // Usually your repo name.
   themeConfig: {
+    gtag: {
+      // You can also use your "G-" Measurement ID here.
+      trackingID: 'G-2WCKBCRHMM',
+      // Optional fields.
+      anonymizeIP: false, // Should IPs be anonymized?
+    },
+    googleAnalytics: {
+      trackingID: 'G-2WCKBCRHMM',
+      // Optional fields.
+      anonymizeIP: false, // Should IPs be anonymized?
+    },
     navbar: {
       // style: 'dark',
       title: 'Crypto Arsenal',
@@ -86,7 +97,16 @@ module.exports = {
     defaultLocale: 'zh-tw',
     locales: ['zh-tw', 'en'],
   },
+
   presets: [
+    [
+      '@docusaurus/plugin-sitemap',
+      {
+        changefreq: 'weekly',
+        priority: 0.5,
+        trailingSlash: false,
+      },
+    ],
     [
       '@docusaurus/preset-classic',
       {
