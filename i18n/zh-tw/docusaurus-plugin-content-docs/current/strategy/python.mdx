@@ -334,12 +334,17 @@ if snap != {}:
 
 以下範例為刪除第一筆掛上的訂單:
 ```python
-  CA.cancel_order(information['orders'][0])
+  CA.cancel_order({
+    exchange: 'binance',
+    pair: 'BTC-USDT',
+    orderId: information['orders'][0]
+  })
 ```
 
 ### `CA.query_history_data`
 可在 `__init__` 函數中取得過去一段時間的歷史資料，以便執行策略當下即可計算相關參數（例如MA）。
 CA.query_history_data(length, period) 可取得過去幾個  `length` 週期  `period` 的資料。
+
 **Input**
 
 ```
@@ -355,7 +360,7 @@ CA.query_history_data(length, period) 可取得過去幾個  `length` 週期  `p
 ```
 #### 範例
 
-```
+```python
     def __init__(self):
         self.subscribedBooks = {
             'Binance': {
@@ -374,6 +379,10 @@ CA.query_history_data(length, period) 可取得過去幾個  `length` 週期  `p
 ```
 
 ### `CA.storage`
+
+<Highlight color="#ffba00"> In Progress </Highlight>
+
+存取鍵值對 可在策略結束後讀取
 
 **Input**
 
@@ -394,6 +403,18 @@ To access key
 
 ```
   value: string;
+```
+#### 範例
+
+```python
+CA.storage('string', 'to the moon 🌙')
+val = CA.storage('string') # to the moon 🌙
+
+CA.storage('int', 131441)
+val = CA.storage('int') # 131441
+
+CA.storage('none', None)
+val = CA.storage('none') # None
 ```
 
 ## 進階模組
@@ -474,7 +495,7 @@ Then you're allowed to tweak these variables to be used in your strategy before 
 You can access these arguments by `self['argName']`
 :::
 
-```py
+```python
 def trade(self, information):
     R1 = float(self['R1'])
 
