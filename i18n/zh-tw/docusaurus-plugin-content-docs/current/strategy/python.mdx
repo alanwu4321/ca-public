@@ -361,26 +361,31 @@ CA.query_history_data(length, period) 可取得過去幾個  `length` 週期  `p
 #### 範例
 
 ```python
-    def __init__(self):
-        self.subscribedBooks = {
-            'Binance': {
-                'pairs': ['BTC-USDT'],
-            },
-        }
-        self.period = 60 * 60  # 1 hour
-        self.history_data = CA.query_history_data(168, self.period) # querry the past 7 days data 
-        if self.history_data:
-            exchange = list(self.history_data['candles'])[0]
-            pair = list(self.history_data['candles'][exchange])[0]
-            high_list = np.array([])
-            for candles in self.history_data['candles'][exchange][pair]:
-                CA.log('history high: ' + str(candles['high']))                
+def __init__(self):
+
+    self.subscribed_books = {
+        'Binance': {
+            'pairs': ['BTC-USDT'],
+        },
+    }
+    self.period = 60 * 60  # 1 hour
+    
+    # querry the past 7 days data 
+    self.history_data = CA.query_history_data(168, self.period)
+    
+    if self.history_data:
+        exchange = list(self.history_data['candles'])[0]
+        pair = list(self.history_data['candles'][exchange])[0]
+        high_list = np.array([])
+        for candles in self.history_data['candles'][exchange][pair]:
+            CA.log('history high: ' + str(candles['high']))                
 
 ```
 
 ### `CA.storage`
 
 <Highlight color="#ffba00"> In Progress </Highlight>
+
 
 存取鍵值對 可在策略結束後讀取
 
