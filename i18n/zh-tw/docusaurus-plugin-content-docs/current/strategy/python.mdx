@@ -370,7 +370,7 @@ def __init__(self):
     }
     self.period = 60 * 60  # 1 hour
     
-    # querry the past 7 days data 
+    # query the past 7 days data 
     self.history_data = CA.query_history_data(168, self.period)
     
     if self.history_data:
