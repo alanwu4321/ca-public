@@ -22,6 +22,12 @@ This command starts a local development server and opens up a browser window. Mo
 yarn build
 ```
 
+## Translate
+
+```console
+yarn run write-translations -- --locale fr
+```
+
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
 ## Deployment

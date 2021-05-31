@@ -18,5 +18,9 @@
   "sidebar.tutorialSidebar.category.Live Trade": {
     "message": "即時交易",
     "description": "The label for category Live Trade in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Concept": {
+    "message": "使用說明",
+    "description": "The label for category Concept in sidebar tutorialSidebar"
   }
 }

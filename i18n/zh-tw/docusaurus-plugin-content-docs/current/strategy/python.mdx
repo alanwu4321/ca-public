@@ -84,9 +84,10 @@ class Strategy():
 
 ## 架構
 
-### Candles K線資訊
+### Candles K 線資訊
 
-系統呼叫 `strategy` 時，會傳入 `information` 物件，以提供3大類資訊： `candles` (K線資訊), `orders` (訂單），以及 ` orderBooks` (限價訂單簿)．取用方法為:
+系統呼叫 `strategy` 時，會傳入 `information` 物件，以提供 3 大類資訊： `candles` (K 線資訊), `orders` (訂單），以及 ` orderBooks` (限價訂單簿)．取用方法為:
+
 ```python
 information['candles']
 information['orders']
@@ -137,22 +138,22 @@ pair = list(information['candles'][exchange])[0]
 
 ### Orders 訂單
 
-使用 `information['orders']` 取得訂單資訊，以 list of dirctionary 的形式儲存，第一筆訂單為 `information['orders'][0]`，訂單內包含的資料有： `price`, `amount`, `status` 和`orderId`，其中status可能為`FILLED` 或 `NEW`，分別代表成交或尚未成交。取用範例如下:
+使用 `information['orders']` 取得訂單資訊，以 list of dirctionary 的形式儲存，第一筆訂單為 `information['orders'][0]`，訂單內包含的資料有： `price`, `amount`, `status` 和`orderId`，其中 status 可能為`FILLED` 或 `NEW`，分別代表成交或尚未成交。取用範例如下:
 
 ```python
   for i in range(len(information['orders'])):
     Log('order price: ' + str(information['orders'][i]['price']) +
-    ' ,order amount: ' + str(information['orders'][i]['amount']) + 
-    ' ,status: ' + str(information['orders'][i]['status']) + 
-    ' ,orderId: ' + str(information['orders'][i]['orderId']))   
+    ' ,order amount: ' + str(information['orders'][i]['amount']) +
+    ' ,status: ' + str(information['orders'][i]['status']) +
+    ' ,orderId: ' + str(information['orders'][i]['orderId']))
 
 ```
-
 
 ### Order Books 限價訂單簿
 
 Order Books 是在實際交易時才會使用，以觀察當下市場限價單的價格與數量，在回測和競技場比賽都不會用到。(在執行 Backtest 模式中，不會傳入 Order Books 資訊。)
 使用 Order Books 可取得指定交易所中指定交易對的訂單簿資訊，分為 `asks` 買價與 `bids` 賣價兩大類，可取得當下訂單簿的 `price` 價格, `count` 訂單數量和 `amount` 幣數量，取用方式如下:
+
 ```python
   order_books = information['orderBooks']
   one_order_book = order_books[exchange][pair]
@@ -271,7 +272,6 @@ def on_order_state_change(self,  order):
 CA.log(str);
 ```
 
-
 #### 範例
 
 印出收盤價、開盤價與交易量
@@ -333,6 +333,7 @@ if snap != {}:
 #### 範例
 
 以下範例為刪除第一筆掛上的訂單:
+
 ```python
   CA.cancel_order({
     exchange: 'binance',
@@ -342,8 +343,9 @@ if snap != {}:
 ```
 
 ### `CA.query_history_data`
-可在 `__init__` 函數中取得過去一段時間的歷史資料，以便執行策略當下即可計算相關參數（例如MA）。
-CA.query_history_data(length, period) 可取得過去幾個  `length` 週期  `period` 的資料。
+
+可在 `__init__` 函數中取得過去一段時間的歷史資料，以便執行策略當下即可計算相關參數（例如 MA）。
+CA.query_history_data(length, period) 可取得過去幾個 `length` 週期 `period` 的資料。
 
 **Input**
 
@@ -358,6 +360,7 @@ CA.query_history_data(length, period) 可取得過去幾個  `length` 週期  `p
   error: string;
   candles: JSON;
 ```
+
 #### 範例
 
 ```python
@@ -369,23 +372,22 @@ def __init__(self):
         },
     }
     self.period = 60 * 60  # 1 hour
-    
-    # query the past 7 days data 
+
+    # query the past 7 days data
     self.history_data = CA.query_history_data(168, self.period)
-    
+
     if self.history_data:
         exchange = list(self.history_data['candles'])[0]
         pair = list(self.history_data['candles'][exchange])[0]
         high_list = np.array([])
         for candles in self.history_data['candles'][exchange][pair]:
-            CA.log('history high: ' + str(candles['high']))                
+            CA.log('history high: ' + str(candles['high']))
 
 ```
 
 ### `CA.storage`
 
 <Highlight color="#ffba00"> In Progress </Highlight>
-
 
 存取鍵值對 可在策略結束後讀取
 
@@ -409,6 +411,7 @@ To access key
 ```
   value: string;
 ```
+
 #### 範例
 
 ```python
@@ -441,9 +444,28 @@ self.close_price_trace = np.append(self.close_price_trace, [float( information['
 rsi = talib.RSI(self.close_price_trace, Len)[-1]
 ```
 
-## 策略進階
+## 存取策略參數
 
-### 存取策略參數
+:::info
+系統預留參數
+:::
+
+### 空單交易 `is_shorting`
+
+使用者透過將 is_shorting 參數設定為 true，可開啟空單交易模式
+
+### 手續費 `exchange_fee`
+
+另可調整 exchange_fee 以及 spread，以設定更嚴格的回測條件
+![image2](https://drive.google.com/uc?export=view&id=1IWJoekgYPgQWfxfLv_DZ3KjtTkuIeA4L)
+上圖所示，exchange_fee 設定為 0.01，代表每一筆交易會加收總額 1%費用
+（若沒有設定，預設是 0.1%的手續費）
+
+### 滑價調整 `spread`
+
+spread 代表滑點，0.05 代表每筆交易價格會有 5%差異
+
+### 自定義參數
 
 透過 `self['OPTION_NAME']` 存取策略參數
 
@@ -522,20 +544,6 @@ CA.log(str(self['MyArgD'].__class__)) # <class 'str'>
 So if you want to check MyArgA is true or not, you have to use it like `if self['MyArgA'] == 'true'` instead of ~~`if self['MyArgA]`~~.
 
 :::
-
-### 空單交易、手續費與滑價調整
-
-新增策略參數 is_shorting, exchange_fee, spread
-
-#### 範例
-
-使用者透過將 is_shorting 參數設定為 true，可開啟空單交易模式  
-另可調整 exchange_fee 以及 spread，以設定更嚴格的回測條件
-![image2](https://drive.google.com/uc?export=view&id=1IWJoekgYPgQWfxfLv_DZ3KjtTkuIeA4L)
-上圖所示，exchange_fee 設定為 0.01，代表每一筆交易會加收總額 1%費用
-（若沒有設定，預設是 0.1%的手續費）
-
-spread 代表滑點，0.05 代表每筆交易價格會有 5%差異
 
 ## 黃金交叉策略範例
 
