@@ -452,18 +452,23 @@ rsi = talib.RSI(self.close_price_trace, Len)[-1]
 
 ### 空單交易 `is_shorting`
 
-使用者透過將 is_shorting 參數設定為 true，可開啟空單交易模式
+使用者透過將 `is_shorting` 參數設定為 true，可開啟空單交易模式
 
 ### 手續費 `exchange_fee`
 
-另可調整 exchange_fee 以及 spread，以設定更嚴格的回測條件
+另可調整 `exchange_fee` 以及 `spread`，以設定更嚴格的回測條件
+
 ![image2](https://drive.google.com/uc?export=view&id=1IWJoekgYPgQWfxfLv_DZ3KjtTkuIeA4L)
-上圖所示，exchange_fee 設定為 0.01，代表每一筆交易會加收總額 1%費用
-（若沒有設定，預設是 0.1%的手續費）
+
+上圖所示，`exchange_fee` 設定為 `0.01`，代表每一筆交易會加收總額 **1%** 費用
+
+:::note
+若沒有設定，預設是 **0.1%** 的手續費
+:::
 
 ### 滑價調整 `spread`
 
-spread 代表滑點，0.05 代表每筆交易價格會有 5%差異
+`spread` 代表滑點，`0.05` 代表每筆交易價格會有 **5%** 差異
 
 ### 自定義參數
 
