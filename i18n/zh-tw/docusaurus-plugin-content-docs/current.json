@@ -16,7 +16,7 @@
     "description": "The label for category Simulation in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Live Trade": {
-    "message": "即時交易",
+    "message": "實單交易",
     "description": "The label for category Live Trade in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Concept": {

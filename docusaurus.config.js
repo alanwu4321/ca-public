@@ -41,8 +41,8 @@ module.exports = {
           position: 'right',
         },
         {
-          href: 'https://github.com/Crypto-Arsenal',
-          label: 'GitHub',
+          href: 'https://crypto-arsenal.io/',
+          label: 'Dashboard',
           position: 'right',
         },
       ],
