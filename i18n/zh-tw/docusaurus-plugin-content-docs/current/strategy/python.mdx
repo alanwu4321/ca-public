@@ -382,7 +382,7 @@ def __init__(self):
         high_list = np.array([])
         for candles in self.history_data['candles'][exchange][pair]:
             CA.log('history high: ' + str(candles['high']))
-
+            high_list = np.append(high_list, [float(candles['high'])])
 ```
 
 ### `CA.storage`
