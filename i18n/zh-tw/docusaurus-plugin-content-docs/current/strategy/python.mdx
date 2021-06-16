@@ -132,8 +132,8 @@ pair = list(information['candles'][exchange])[0]
   target_currency = pair.split('-')[0]  #BTC
   base_currency = pair.split('-')[1]  #USDT
   # 取得當下擁有的貨幣數量
-  base_currency_amount = self['assets'][exchange][base_currency]
-  target_currency_amount = self['assets'][exchange][target_currency]
+  base_currency_amount = information['availableAssets'][exchange][base_currency]
+  target_currency_amount = information['availableAssets'][exchange][target_currency]
 ```
 
 ### Orders 訂單
@@ -600,8 +600,8 @@ class Strategy():
         pair = list(information['candles'][exchange])[0]
         target_currency = pair.split('-')[0]  #ETH
         base_currency = pair.split('-')[1]  #USDT
-        base_currency_amount = self['assets'][exchange][base_currency]
-        target_currency_amount = self['assets'][exchange][target_currency]
+        base_currency_amount = sinformation['availableAssets'][exchange][base_currency]
+        target_currency_amount = information['availableAssets'][exchange][target_currency] 
         # add latest price into trace
         close_price = information['candles'][exchange][pair][0]['close']
         self.close_price_trace = np.append(self.close_price_trace, [float(close_price)])
