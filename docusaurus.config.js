@@ -2,8 +2,8 @@
 module.exports = {
   title: 'Crypto Arsenal',
   tagline: 'Documentation & Blog',
-  url: 'https://crypto-arsenal.github.io',
-  baseUrl: '/public/',
+  url: 'https://ca-public.vercel.app',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
