@@ -25,8 +25,9 @@ jobs:
           npm i
           fi
           npm run build
-  gh-release:
-    if: github.event_name != 'pull_request'
+  deploy-to-vercel:
+    #https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#github-context
+    if: github.event_name != 'pull_request' && github.repository == 'Crypto-Arsenal/public'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
