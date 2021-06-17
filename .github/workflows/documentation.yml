@@ -1,4 +1,4 @@
-name: deploy-gh-page
+name: deploy-vercel
 
 on:
   pull_request:
@@ -37,7 +37,7 @@ jobs:
       - uses: webfactory/ssh-agent@v0.5.0
         with:
           ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
-      - name: Release to GitHub Pages
+      - name: Deploy to Vercel through personal account
         env:
           USE_SSH: true
         run: |
