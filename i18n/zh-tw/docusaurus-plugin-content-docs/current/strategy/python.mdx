@@ -600,7 +600,7 @@ class Strategy():
         pair = list(information['candles'][exchange])[0]
         target_currency = pair.split('-')[0]  #ETH
         base_currency = pair.split('-')[1]  #USDT
-        base_currency_amount = sinformation['availableAssets'][exchange][base_currency]
+        base_currency_amount = information['availableAssets'][exchange][base_currency]
         target_currency_amount = information['availableAssets'][exchange][target_currency] 
         # add latest price into trace
         close_price = information['candles'][exchange][pair][0]['close']
